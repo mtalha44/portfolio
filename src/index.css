@@ -169,9 +169,6 @@ body {
   );
 }
 
-.transformY-10{
-  /* transform: translateY(-62px); */
-}
 
 @keyframes wave-animation {
   0% {
