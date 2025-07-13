@@ -35,7 +35,7 @@ function Target({ position }) {
 const TargetModel = () => {
   return (
     <Canvas
-      style={{ width: '100%', height: '100%', backgroundColor: '' }}
+      style={{ width: '100%', height: '100%' }}
       camera={{ position: [0, 1, 3], fov: 45 }}
     >
       <ambientLight intensity={0.6} />

@@ -4,6 +4,7 @@ import { ModelCanvas } from "../components/models"
 import TargetModel from "../components/Target"
 import Rings from "../components/Ring"
 import RingsModel from "../components/Ring"
+import TypingEffect from "./Description"
 function Hero() {
 
   return (
@@ -13,27 +14,29 @@ function Hero() {
                 Hi, I'm Talha
                 <span className="waving-hand">👋</span>
             </p>
-            <p className="hero_tag text-gray_gradient z-50">Building Products & Brands</p>
+            <div className="max-[395px]:h-[3rem]">
+              <TypingEffect/>
+            </div>
         </div>
         <div className="w-full relative h-[88vh] max-[1095px]:h-[70vh] max-[875px]:h-[50vh]  max-[1095px]:transformY-10   inset-0 " >
            
             <HackerRoom />
-            <div className="absolute top-0 right-28 w-28 h-28  max-[875px]:right-20 max-[475px]:right-10 max-[475px]:h-[5rem] max-[475px]:w-[2.5rem] ">
+            <div className="absolute top-0 right-28 w-28 h-28  max-[875px]:right-16 max-[595px]:right-10 max-[595px]:h-[4rem] max-[595px]:w-[2rem] ">
               <ModelCanvas src={'react'}/>
             </div>
-            <div className="absolute top-[20rem] w-28 h-28 right-48 ">
+            <div className="absolute top-[20rem] w-28 h-28 right-48 max-[1095px]:right-14 max-[1095px]:top-[30rem] max-[885px]:w-20 max-[885px]:h-20 max-[885px]:top-[22rem] max-[595px]:w-14 max-[595px]:h-14 max-[595px]:top-[19rem] max-[395px]:top-[17rem] max-[395px]:right-4">
               <ModelCanvas src={'cube'}/>
             </div>            
-            <div className="absolute top-[25rem] left-44 w-[150px] h-[100px]">
+            <div className="absolute top-[25rem] left-44 w-[150px] h-[100px] max-[1095px]:left-10 max-[1095px]:top-[31rem] max-[875px]:left-18 max-[875px]:top-[22rem] max-[875px]:w-[80px] max-[875px]:h-[80px] max-[795px]:top-[20rem] max-[795px]:left-6 max-[595px]:w-[50px] max-[595px]:h-[50px] max-[595px]:top-[16rem] max-[395px]:left-0">
               <TargetModel />
             </div>
-            <div className="absolute top-[-7rem] left-32 w-[150px] h-[150px] ">
+            <div className="absolute top-[-7rem] left-32 w-[150px] h-[150px] max-[1135px]:left-12 max-[985px]:top-[-1rem] max-[845px]:left-0 max-[595px]:w-[100px] max-[595px]:h-[100px]">
               <RingsModel />
             </div>
 
         </div>
             
-        <div className="mt-4 w-full z-10 c-space">
+        <div className="mt w-full z-10 c-space">
           <a href="#contact" className="w-fit">
             <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96"/>
           </a>

@@ -7,13 +7,16 @@ import { useRef } from 'react';
 
 const Model = () => {
 const isSmallLaptop = useMediaQuery({ maxWidth:1095 })
-const isMobile = useMediaQuery({ maxWidth:495 })
+const isMobile = useMediaQuery({ maxWidth:595 })
+const isSmallMobile = useMediaQuery({ maxWidth:395 })
 const isTablet = useMediaQuery({ maxWidth:975 })
 
-  const scaleValue = isMobile 
+  const scaleValue = isSmallMobile 
+  ? 1.1 
+  : isMobile 
   ? 1.3 
   : isTablet 
-    ? 1.4 
+    ? 1.3 
     : isSmallLaptop 
       ? 2 
       : 2.5;
