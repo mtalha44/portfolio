@@ -1,8 +1,7 @@
-import HackerRoom, { CubeCanvas } from "../components/HackerRoom"
+import HackerRoom from "../components/HackerRoom"
 import Button from "../components/Button"
 import { ModelCanvas } from "../components/models"
 import TargetModel from "../components/Target"
-import Rings from "../components/Ring"
 import RingsModel from "../components/Ring"
 import TypingEffect from "./Description"
 function Hero() {
