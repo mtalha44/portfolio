@@ -1,66 +1,201 @@
-import React, { useState } from 'react'
-import { myProjects } from '../constants'
+// import React, { useState } from 'react'
+// import { myProjects } from '../constants'
+// import { Robot } from '../components/Robot';
+
+// function Projects() {
+    
+//     const [ selectProjInd , setProjectInd ] = useState(0);
+//     const currentProj = myProjects[selectProjInd];
+//     const viewerRef = useRef(null);
+//     const [isLoading, setIsLoading] = useState(true);
+
+//     const handleNavigation = (direction) => {
+//             setProjectInd( (prevInd) => {
+//                 if( direction === "previous" ) {
+//                     return prevInd === 0 ? myProjects.length - 1 : prevInd - 1;  
+//              }
+//              else{
+//                 return prevInd === myProjects.length - 1 ? 0 : prevInd + 1;
+//              }
+//         })
+//     }
+//   return (
+//     <section className='c-space my-20'>
+//         <p className='head-text'>My Works</p>
+//         <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
+//             <div className='flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200'>
+//                 <div className='absolute top-0 right-0'>
+//                     <img src={currentProj.spotlight} alt="spotlight" className='w-full h-96 object-cover rounde-xl'/>
+//                 </div>
+//                 <div className='p-3 background-filter backdrop-blur-3xl w-fit rounded-lg ' style={currentProj.logoStyle}>
+//                     <img src={currentProj .logo} alt="logo" className='w-10 h-10 shadow-sm'/>
+//                 </div>
+//                 <div className='flex flex-col gap-5 text-white-600 my-5'>
+//                     <p className='text-white text-2xl font-semibold animatedText'>{currentProj.title}</p>
+//                     <p className='animatedText'>{currentProj.desc}</p>
+//                     <p className='animatedText'>{currentProj.subdesc}</p>
+//                 </div>
+//                 <div className='flex items-center justify-between flex-wrap gap-5'>
+//                     <div className='flex items-center gap-3'>
+//                         {currentProj.tags.map((tag, index) => (
+//                             <div key={index} className='tech-logo'>
+//                                 <img src={tag.path} alt={tag.name} />
+//                             </div>
+//                         ))}
+//                     </div>
+//                     <a href={currentProj.href} target='_blank' rel='noreferrer' className='flex items-center gap-2 cursor-pointer text-white-600 '>
+//                         <p>Check Live Site</p>
+//                         <img src="/assets/arrow-up.png" alt="arrow" className='w-3 h-3'/>
+//                     </a>
+//                 </div>
+
+//                 <div className='flex justify-between items-center mt-7'>
+//                     <button className='arrow-btn' onClick={() => handleNavigation("previous")}>  
+//                         <img src="/assets/left-arrow.png" alt="Left arrow" className='w-3 h-3'/>
+//                     </button>
+//                     <button className='arrow-btn' onClick={() => handleNavigation("next")}>    
+//                         <img src="/assets/right-arrow.png" alt="Right arrow" className='w-3 h-3'/>
+//                     </button>
+//                 </div>
+//             </div>
+
+//             <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
+//                     {/* <Robot /> */}
+//                    {isLoading && (
+//             <div className="absolute inset-0 flex items-center justify-center z-10 bg-black bg-opacity-80 rounded-lg">
+//               <p className="text-white">Loading Spline...</p>
+//             </div>
+//           )}
+//           <div ref={viewerRef} className="w-full h-full rounded-lg overflow-hidden">
+//             <spline-viewer
+//               url="https://prod.spline.design/tav5qDYihO4JLrrR/scene.splinecode"
+//               style={{ width: '100%', height: '100%', border: 'none' }}
+//             ></spline-viewer>
+//           </div>
+//             </div>
+//         </div>
+//     </section>
+//   )
+// }
+
+// export default Projects
+
+
+
+import React, { useState, useEffect, useRef } from 'react';
+import { myProjects } from '../constants';
+// import SplineRobotViewer from '../components/Robot';
 
 function Projects() {
-    
-    const [ selectProjInd , setProjectInd ] = useState(0);
-    const currentProj = myProjects[selectProjInd];
-    const handleNavigation = (direction) => {
-            setProjectInd( (prevInd) => {
-                if( direction === "previous" ) {
-                    return prevInd === 0 ? myProjects.length - 1 : prevInd - 1;  
-             }
-             else{
-                return prevInd === myProjects.length - 1 ? 0 : prevInd + 1;
-             }
-        })
+  const [selectProjInd, setProjectInd] = useState(0);
+  const currentProj = myProjects[selectProjInd];
+
+  const viewerRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleNavigation = (direction) => {
+    setProjectInd((prevInd) => {
+      if (direction === 'previous') {
+        return prevInd === 0 ? myProjects.length - 1 : prevInd - 1;
+      } else {
+        return prevInd === myProjects.length - 1 ? 0 : prevInd + 1;
+      }
+    });
+  };
+
+  // Load the spline-viewer script only once
+  useEffect(() => {
+    const existingScript = document.querySelector('script[src*="spline-viewer.js"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = 'https://unpkg.com/@splinetool/viewer@1.10.37/build/spline-viewer.js';
+      document.body.appendChild(script);
     }
+
+    // Check if already loaded then listen to load event
+    const checkViewerReady = setInterval(() => {
+      const viewer = viewerRef.current?.querySelector('spline-viewer');
+      if (viewer) {
+        viewer.addEventListener('load', () => setIsLoading(false));
+        clearInterval(checkViewerReady);
+      }
+    }, 300);
+
+    return () => clearInterval(checkViewerReady);
+  }, []);
+
   return (
-    <section className='c-space my-20'>
-        <p className='head-text'>My Works</p>
-        <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
-            <div className='flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200'>
-                <div className='absolute top-0 right-0'>
-                    <img src={currentProj.spotlight} alt="spotlight" className='w-full h-96 object-cover rounde-xl'/>
-                </div>
-                <div className='p-3 background-filter backdrop-blur-3xl w-fit rounded-lg ' style={currentProj.logoStyle}>
-                    <img src={currentProj .logo} alt="logo" className='w-10 h-10 shadow-sm'/>
-                </div>
-                <div className='flex flex-col gap-5 text-white-600 my-5'>
-                    <p className='text-white text-2xl font-semibold animatedText'>{currentProj.title}</p>
-                    <p className='animatedText'>{currentProj.desc}</p>
-                    <p className='animatedText'>{currentProj.subdesc}</p>
-                </div>
-                <div className='flex items-center justify-between flex-wrap gap-5'>
-                    <div className='flex items-center gap-3'>
-                        {currentProj.tags.map((tag, index) => (
-                            <div key={index} className='tech-logo'>
-                                <img src={tag.path} alt={tag.name} />
-                            </div>
-                        ))}
-                    </div>
-                    <a href={currentProj.href} target='_blank' rel='noreferrer' className='flex items-center gap-2 cursor-pointer text-white-600 '>
-                        <p>Check Live Site</p>
-                        <img src="/assets/arrow-up.png" alt="arrow" className='w-3 h-3'/>
-                    </a>
-                </div>
-
-                <div className='flex justify-between items-center mt-7'>
-                    <button className='arrow-btn' onClick={() => handleNavigation("previous")}>  
-                        <img src="/assets/left-arrow.png" alt="Left arrow" className='w-3 h-3'/>
-                    </button>
-                    <button className='arrow-btn' onClick={() => handleNavigation("next")}>    
-                        <img src="/assets/right-arrow.png" alt="Right arrow" className='w-3 h-3'/>
-                    </button>
-                </div>
-            </div>
-
-            <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-                    
-            </div>
+    <section className="c-space my-20">
+      <div>
+        <p className="head-text">My Works</p>
+        <div>
+            
         </div>
+      </div>
+      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+          <div className="absolute top-0 right-0">
+            <img
+              src={currentProj.spotlight}
+              alt="spotlight"
+              className="w-full h-96 object-cover rounde-xl"
+            />
+          </div>
+          <div className="p-3 background-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProj.logoStyle}>
+            <img src={currentProj.logo} alt="logo" className="w-10 h-10 shadow-sm" />
+          </div>
+          <div className="flex flex-col gap-5 text-white-600 my-5">
+            <p className="text-white text-2xl font-semibold animatedText">{currentProj.title}</p>
+            <p className="animatedText">{currentProj.desc}</p>
+            <p className="animatedText">{currentProj.subdesc}</p>
+          </div>
+          <div className="flex items-center justify-between flex-wrap gap-5">
+            <div className="flex items-center gap-3">
+              {currentProj.tags.map((tag, index) => (
+                <div key={index} className="tech-logo">
+                  <img src={tag.path} alt={tag.name} />
+                </div>
+              ))}
+            </div>
+            <a
+              href={currentProj.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 cursor-pointer text-white-600"
+            >
+              <p>Check Live Site</p>
+              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+            </a>
+          </div>
+          <div className="flex justify-between items-center mt-7">
+            <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
+              <img src="/assets/left-arrow.png" alt="Left arrow" className="w-3 h-3" />
+            </button>
+            <button className="arrow-btn" onClick={() => handleNavigation('next')}>
+              <img src="/assets/right-arrow.png" alt="Right arrow" className="w-3 h-3" />
+            </button>
+          </div>
+        </div>
+
+        {/* Spline Viewer with loader */}
+        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full relative">
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center z-10 bg-black bg-opacity-80 rounded-lg">
+              <p className="text-white">Loading Spline...</p>
+            </div>
+          )}
+          <div ref={viewerRef} className="w-full h-full rounded-lg overflow-hidden">
+            <spline-viewer
+              url="https://prod.spline.design/tav5qDYihO4JLrrR/scene.splinecode"
+              style={{ width: '100%', height: '100%', border: 'none' }}
+            ></spline-viewer>
+          </div>
+
+        </div>
+      </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

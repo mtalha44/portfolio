@@ -18,7 +18,8 @@ const About = () => {
                 <div className="col-span-1 xl:row-span-3 ">
                     <div className="grid-container">
                         {/* <img src="/assets/anime.jpg" alt="grid-1" className="w-full sm-h-[276px] h-fit object-contain "/> */}
-                        <img src="/assets/grid1.png" alt="grid-1" className="w-full sm-h-[276px] h-fit object-contain "/>
+                        {/* <img src="/assets/grid1.png" alt="grid-1" className="w-full sm-h-[276px] h-fit object-contain "/> */}
+                        <img src="/assets/Talha-transparent.png" alt="grid-1" className="w-[70%] sm-h-[276px] h-fit object-contain "/>
                         <div>
                             <p className="grid-headtext">Hi, I'm Talha</p>
                             <p className="grid-subtext">With 2 years of experienced, I have honed my skills in frontend and backend development, with a focus on animated 3d websites.</p>
@@ -27,7 +28,7 @@ const About = () => {
                 </div>
                 <div className="col-span-1 xl:row-span-3">
                     <div className="grid-container items-center">
-                        <img src="/assets/about1.png" alt="grid-2" className="w-full sm:w-[276px] h-fit object-contain"/>
+                        <img src="/assets/tech-stack.png" alt="grid-2" className="w-full sm:w-[276px] h-fit object-contain"/>
                         <div>
                             <p className="grid-headtext">Tech Stack</p>
                             <p className="grid-subtext">I specialize in JavaScript with focus on React and Next.js ecosystem.</p>
