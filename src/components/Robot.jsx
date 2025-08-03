@@ -15,9 +15,7 @@ export const SplineRobot = () => {
   return (
     <div className="overflow-hidden">
       <spline-viewer
-      
-        // url="https://prod.spline.design/VdxmUUJjkSIFqSLm/scene.splinecode"
-        url="https://prod.spline.design/GcwxqWULhaUoHOW7/scene.splinecode"
+            url="https://prod.spline.design/Xen9kV6X3DHkBGUy/scene.splinecode"
         loading-anim
         style={{
           width: '100%',
@@ -25,7 +23,7 @@ export const SplineRobot = () => {
           position: 'absolute',
           top: 0,
           left: 0,
-          transform : "scale(1.1)",
+        //   transform : "scale(1.1)",
         
         }}
       />
