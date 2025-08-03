@@ -73,7 +73,6 @@ if (isMobile) {
 
 
 
-
   const RotatingCube = () => {
   const ref = useRef();
   const gltf = useGLTF('/models/cube.glb');
