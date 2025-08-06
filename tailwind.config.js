@@ -29,6 +29,9 @@ export default {
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
       },
+       dropShadow: {
+        glow: "0 0 10px #ffffff",
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import AboutGlobe from "../components/Globe";
+import Laptop from "../components/laptop";
 
 const About = () => {
 
@@ -17,8 +18,6 @@ const About = () => {
             <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full"> 
                 <div className="col-span-1 xl:row-span-3 ">
                     <div className="grid-container">
-                        {/* <img src="/assets/anime.jpg" alt="grid-1" className="w-full sm-h-[276px] h-fit object-contain "/> */}
-                        {/* <img src="/assets/grid1.png" alt="grid-1" className="w-full sm-h-[276px] h-fit object-contain "/> */}
                         <img src="/assets/Talha-transparent.png" alt="grid-1" className="w-[70%] sm-h-[276px] h-fit object-contain "/>
                         <div>
                             <p className="grid-headtext">Hi, I'm Talha</p>
@@ -28,53 +27,30 @@ const About = () => {
                 </div>
                 <div className="col-span-1 xl:row-span-3">
                     <div className="grid-container items-center">
-                        <img src="/assets/tech-stack.png" alt="grid-2" className="w-full sm:w-[276px] h-fit object-contain"/>
+                        {/* <img src="/assets/tech-stack.png" alt="grid-2" className="w-full sm:w-[276px] h-fit object-contain"/> */}
+                          {/* <div> */}
+                            <Laptop />
+                          {/* </div> */}
                         <div>
                             <p className="grid-headtext">Tech Stack</p>
-                            <p className="grid-subtext">I specialize in JavaScript with focus on React and Next.js ecosystem.</p>
+                            <p className="grid-subtext">Focused on modern JavaScript, especially React and Next.js, to build high-performance and scalable web apps.</p>
                         </div>
                     </div>
                 </div>
                 <div className="col-span-1 xl:row-span-4">
                     <div className="grid-container">
-                        {/* <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center itmes-center"> 
-                            <Globe 
-                                height={326}
-                                width={326}
-                                backgroundColor="rgba(0,0,0,0)"
-                                backgroundImageOpacity={0.5}  
-                                showAtmosphere
-                                showGraticules
-                                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"                                   
-                                labelsData={[
-                                  {
-                                    lat: 31.5204,         // Latitude (e.g., Lahore)
-                                    lng: 74.3587,         // Longitude
-                                    text: "I'm live here! \n Lahore, PK",   // Label text
-                                    color: "white",      // Label color
-                                    size: 3             // Try values like 1.5 or 2 (20 might be too big)
-                                  }
-                                ]}
-                                labelLat={d => d.lat}
-                                labelLng={d => d.lng}
-                                labelText={d => d.text}
-                                labelColor={d => d.color}
-                                labelSize={d => d.size}        
-
-/>
-                        </div> */}
                         <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center itmes-center">
                             <AboutGlobe/>
                         </div>
                         <div>
                             <p className="grid-headtext">
-                                I work remotely across most timezones.
+                                Remote. Flexible. Worldwide.
                             </p>
                             <p className="grid-subtext">
-                                I'm based in Lahore, Pakistan with remote work available.
+                                Remote-friendly developer based in Lahore, Pakistan, with flexible availability across global time zones.
                             </p>
                             <Button name="Contact Me" isBeam containerClass="mt-10 w-full "/>
+                            
                         </div>
                     </div>
                 </div>

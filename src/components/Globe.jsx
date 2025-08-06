@@ -30,8 +30,8 @@ const AboutGlobe = () => {
     return (
            <Globe
                ref={globeRef}
-               height={326}
-               width={326}
+               height={320}
+               width={320}
                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                backgroundColor="rgba(0,0,0,0)"
