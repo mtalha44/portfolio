@@ -145,6 +145,11 @@ body {
     @apply w-2.5 h-2.5 object-contain invert brightness-0;
   }
 
+
+  /* skills */
+  .skills-container {
+    @apply my-20 w-full h-full;
+  }
   /*  footer */
   .social-icon {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;

@@ -3,6 +3,7 @@ import Clients from './section/Clients'
 import Hero from './section/Hero'
 import Navbar from './section/Navbar'
 import Projects from './section/Projects'
+import Skills from './section/Skills'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <About/>
       <Projects/>
       <Clients />
+      <Skills />
     </main>
   )
 }
