@@ -22,15 +22,13 @@ const ModelSkillsRobot = () => {
   }, [actions, names]);
 
   return (
-    <Center>
       <primitive
         ref={group}
         object={scene}
-        position={[0, 5, 0]}
+        position={[0, -2, 0]}
         rotation={[0, 1.90, 0]}
-        scale={1.84}
-      />
-    </Center>
+        scale={1.94}
+        />
   );
 };
 
