@@ -14,7 +14,7 @@ const About = () => {
         }, 2000);
     }
     return (
-        <section className="c-sapce my-20 ">
+        <section className="c-sapce my-20 max-[875px]:mt-1">
             <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full"> 
                 <div className="col-span-1 xl:row-span-3 ">
                     <div className="grid-container">

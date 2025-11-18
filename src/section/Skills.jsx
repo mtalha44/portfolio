@@ -1,8 +1,5 @@
 import { useState } from "react";
-import Image3DModel from "../components/ImageModel";
 import SkillsRobot from "../components/SkillsRobot";
-import { div } from "three/tsl";
-
 
 const skills = [
   {
@@ -70,31 +67,17 @@ const skills = [
 
 const Skills  = () => {
     
-    const [ hoverId , setHoverId ] = useState(null)
+    const [ hoverId , setHoverId ] = useState(null);
     
     return (
         <section className="skills-container c-space ">
                 <p className="head-text">Skills</p>
-            <div className="text-white  flex flex-row items-center justify-between mt-1">
-                    <div className="w-[40%] h-full">
+            <div className="text-white  flex flex-row items-center justify-between mt-1 max-[875px]:flex-col max-[875px]:gap-10">
+                    <div className="w-[40%] h-full max-[875px]:w-[100%]"> 
                      <SkillsRobot /> 
 
-                    </div>
-                    {/* <div className="w-[59%] justify-center items-center flex flex-row gap-2 flex-wrap">
-                        {
-                            skills.map((skill , idx) => (
-                                <div className="flex flex-col items-center gap-2 w-36 justify-center" key={idx}>
-                                    <div className="w-12 p-1 h-12">
-                                        <Image3DModel src={`${skill.src}`}/>                            
-                                    </div>
-                                    <h3 className="text-white text-[0.91rem] text-center font-semibold">{skill.name}</h3>
-                                    <p className="text-sm text-gray-400 text-center">{skill.description}</p>
-                                </div>                       
-                            ))
-                        }
-                    </div> */}
-                    
-                    <div className="w-[59%] grid grid-cols-5 grid-rows-2 gap-8">
+                    </div>                    
+                    <div className="w-[59%] grid grid-cols-5 grid-rows-2 gap-8 max-[875px]:w-[100%]">
                         {
                           skills.map((skill) => (
                             <div className="flex justify-center items-center gap-2 flex-col cursor-pointer" key={skill.id} onMouseEnter={() => setHoverId(skill.id)} onMouseLeave={() => setHoverId(null)}>

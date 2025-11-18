@@ -1,13 +1,16 @@
-import HackerRoom from "../components/HackerRoom"
+import {lazy, useEffect} from 'react'
 import Button from "../components/Button"
-import { ModelCanvas } from "../components/models"
-import TargetModel from "../components/Target"
-import RingsModel from "../components/Ring"
 import TypingEffect from "./Description"
+
+const HackerRoom = lazy(() => import('../components/HackerRoom'));
+const TargetModel = lazy(() => import('../components/Target'));
+const RingsModel = lazy(() => import('../components/Ring'));
+const ModelCanvas = lazy(() => import('../components/models').then(module => ({ default: module.ModelCanvas })));
+
 function Hero() {
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative mb-12">
+    <section className="min-h-screen w-full flex flex-col relative mb-12 max-[875px]:mb-3">
         <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 ">
             <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
                 Hi, I'm Talha

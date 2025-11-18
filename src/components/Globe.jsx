@@ -1,10 +1,13 @@
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import Globe from "react-globe.gl";
 
 const AboutGlobe = () => {
     const globeRef = useRef();
 
-    const arcsData = Array.from({ length: 30 }, () => {
+    const arcsData = useMemo(() => {
+     
+    return Array.from({ length: 15 }, () => {
+    
       const startLat = +(Math.random() * 180 - 90).toFixed(4);
       const startLng = +(Math.random() * 360 - 180).toFixed(4);
 
@@ -21,11 +24,13 @@ const AboutGlobe = () => {
         endLat,
         endLng,
         color: [
-          `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`,
-          `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`
+          `hsl(${Math.floor(Math.random() * 360)}, 80%, 60%)`,
+          `hsl(${Math.floor(Math.random() * 360)}, 80%, 60%)`
         ]
       };
     });
+
+  },[]);
 
     return (
            <Globe

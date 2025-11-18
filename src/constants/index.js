@@ -62,7 +62,7 @@ export const myProjects = [
   title: 'Shopping Cart',
   desc: 'Shopping Cart is a modern and user-friendly web application that simplifies the online shopping experience. It offers dynamic cart functionality, product filtering, quantity adjustments, and a smooth checkout flow — all with a sleek and responsive UI.',
   subdesc:
-    'Built using React 19, Tailwind CSS, TypeScript, Framer Motion, and Convex, this Shopping Cart app is optimized for performance, interactivity, and scalability.',
+    'Built using React 19, Tailwind CSS, Javascript, Framer Motion, and Convex, this Shopping Cart app is optimized for performance, interactivity, and scalability.',
   href: '',
   texture: '/textures/project/project1.mp4',
   logo: '/assets/project-logo1.png',

@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import CanvasLoader from "./CanvasLoader";
 
 const LaptopModel = () => {
-const glb = useGLTF('/models/laptop.glb');
+const glb = useGLTF('/models/laptop_final.glb');
 
   return (
     <primitive object={glb.scene} scale={0.10} position={[0, -1.5, 0]} rotation={[ 0.2, 0, 0]}/>

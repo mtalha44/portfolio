@@ -3,9 +3,12 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef } from "react";
 import CanvasLoader from "./CanvasLoader";
 
+useGLTF.preload("./models/robot_optimized.glb");
+
 const ModelSkillsRobot = () => {
   const group = useRef();
-  const { scene, animations } = useGLTF("./models/robot_playground/scene.gltf");
+  // const { scene, animations } = useGLTF("./models/robot_playground/scene.gltf");
+  const { scene, animations } = useGLTF("./models/robot_optimized.glb");
 
   // Bind animations to the group
   const { actions, names } = useAnimations(animations, group);
