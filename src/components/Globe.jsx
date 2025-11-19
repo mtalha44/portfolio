@@ -1,8 +1,11 @@
 import { useMemo, useRef } from "react";
 import Globe from "react-globe.gl";
+import { useMediaQuery } from "react-responsive";
+
 
 const AboutGlobe = () => {
     const globeRef = useRef();
+    const isSmallMobile = useMediaQuery({ maxWidth:495 })
 
     const arcsData = useMemo(() => {
      
@@ -29,13 +32,12 @@ const AboutGlobe = () => {
         ]
       };
     });
-
   },[]);
 
     return (
            <Globe
                ref={globeRef}
-               height={320}
+               height={ isSmallMobile ? 170 : 320 }
                width={320}
                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
@@ -53,6 +55,7 @@ const AboutGlobe = () => {
                arcDashGap={4}
                arcDashInitialGap={() => Math.random() * 5}
                arcDashAnimateTime={3000}
+               
            />
     )
 }

@@ -1,4 +1,4 @@
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { useRef, useEffect, Suspense } from 'react';
 import gsap from 'gsap';
 import { Canvas } from '@react-three/fiber';

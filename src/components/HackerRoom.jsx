@@ -59,7 +59,7 @@ if (isMobile) {
 
   return (
     <div className="min-w-full m-auto h-full inset-0 ">
-      <Canvas camera={{ position: cameraPosition, fov: fov }} className='' >
+      <Canvas camera={{ position: cameraPosition, fov: fov }}>
         <ambientLight intensity={1} />
         <directionalLight position={[5, 5, 5]} />
         <Suspense fallback={<CanvasLoader />}>
