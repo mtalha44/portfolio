@@ -136,26 +136,24 @@ body {
   }
 
   /* contact section */
-  .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+  .contact-label{
+    @apply tracking-widest;
+  }
+  .contact-input{
+    @apply bg-black-300 w-72 border-[2px] mt-2 border-white rounded-lg  py-3 px-3 text-white text-sm mb-10;
   }
 
-  .field-label {
-    @apply text-lg text-white-600;
+  .contact-input input{
+    background-color: #d1d5db; 
+    width: 18rem;              
+    border: 2px solid white;
+    margin-top: 0.5rem;        
+    border-radius: 0.5rem;     
+    padding: 0.75rem;          
+    color: white;
+    font-size: 0.875rem;       
+    margin-bottom: 2.5rem; 
   }
-
-  .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
-  }
-
-  .field-btn {
-    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
-  }
-
-  .field-btn_arrow {
-    @apply w-2.5 h-2.5 object-contain invert brightness-0;
-  }
-
 
   /* skills */
   .skills-container {

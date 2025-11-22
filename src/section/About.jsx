@@ -15,6 +15,9 @@ const About = () => {
     }
     return (
         <section className="c-sapce my-20 max-[495px]:mt-28">
+            <h3 className='head-text mb-10'>
+                About Me
+            </h3>
             <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full"> 
                 <div className="col-span-1 xl:row-span-3 ">
                     <div className="grid-container items-center max-[495px]:flex max-[495px]:flex-col">
@@ -56,13 +59,13 @@ const About = () => {
                 </div>
                 
                 <div className="xl:col-span-2 xl:row-span-3">
-                        <div className="grid-container"> 
+                        <div className="grid-container "> 
                             <img src="/assets/grid3.png" alt="grid-3" className="w-full sm:h-[260px] h-fit object-contain"/>
                             <div>
-                                <p className="grid-headtext">
+                                <p className="grid-headtext max-[495px]:text-center">
                                     My Passion for Coding
                                 </p>
-                                <p className="grid-subtext">
+                                <p className="grid-subtext max-[495px]:text-center">
                                     I love solving problems and building things that make a difference. Coding isn't just a difference for me, it's a way to express my creativity and problem-solving skills.
                                 </p>
                             </div>

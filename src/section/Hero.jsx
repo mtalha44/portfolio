@@ -10,7 +10,6 @@ const ModelCanvas = lazy(() => import('../components/models').then(module => ({ 
 function Hero() {
 
   return (
-    // <section className="min-h-screen w-full flex flex-col relative mb-12 max-[875px]:mb-2 max-[875px]:h-[70vh]">
     <section className="min-h-screen max-[875px]:h-[70vh] max-[875px]:min-h-[70vh] w-full flex flex-col relative mb-12 max-[875px]:mb-2 ">
         <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 ">
             <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">

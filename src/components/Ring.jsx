@@ -60,7 +60,7 @@ const RingsModel = () => {
       <Suspense fallback={null}>
         <Rings position={sizes.ringPosition} />
       </Suspense>
-      <OrbitControls />
+      <OrbitControls enableZoom={false}/>
     </Canvas>
   );
 };
